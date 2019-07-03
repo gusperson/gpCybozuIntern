@@ -1,6 +1,4 @@
-const filemanage = {
-
-
+const fileManage = {
     'f001': {
         'folderName': 'Information System Department',
         'viewAuth': 'Information System Department',
@@ -55,13 +53,10 @@ const filemanage = {
 
 
 for (let i = 1; i < 8; i++) {
-    const node = document.createElement('li');
-    if (filemanage['f00' + i].viewAuth === 'Everyone') {
-        const permission = document.createTextNode(filemanage['f00' + i].folderName);
-        node.appendChild(permission);
-        document.getElementById('list').appendChild(node);
-
+    const li = document.createElement('li');
+    if (fileManage['f00' + i].viewAuth === 'Everyone') {
+        const folderName = document.createTextNode(fileManage['f00' + i].folderName);
+        li.appendChild(folderName);
+        document.getElementById('list').appendChild(li);
     }
-
 }
-//document.getElementById('list').appendChild(node);

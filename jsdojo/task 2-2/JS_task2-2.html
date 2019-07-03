@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Monthly price of kintone</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+H1 {
+    border:solid 3px #FFBF00;
+    padding:3px;
+    color:#190707;
+    width:430px;
+}
+DIV.st1 {
+    font-size:14pt;
+    font-weight:bold;
+}
+FORM {margin-left:20px;}
+-->
+</style>
+</head>
+<body>
+    <h1>Monthly price of kintone</h1>
+    <div class="st1">Charges for minimum number of users</div><br>
+    <form name="f1">
+        <input type="checkbox" onClick = "selected()" id = "check0">Secure option（$5 per User)
+        <select onChange = "selected()" id = "user">
+            <option value="1">1 User</option>
+            <option value="2">2 Users</option>
+            <option value="3">3 Users</option>
+            <option value="4">4 Users</option>
+            <option value="5">5 Users</option>
+        </select>
+        <br>
+        <input type="checkbox" onClick = "selected()" id = "check1">Additional disks（$10 per 10GB)
+        <select onChange = "selected()" id = "gb">
+            <option value="1">10GB</option>
+            <option value="2">20GB</option>
+            <option value="3">30GB</option>
+            <option value="4">40GB</option>
+            <option value="5">50GB</option>
+        </select>
+        <br>
+        <br>Monthly price $
+        <input type="text" id="price" size="10" value="120">
+    </form>
+<script src="script.js">
+
+</script>
+</body>
+</html>

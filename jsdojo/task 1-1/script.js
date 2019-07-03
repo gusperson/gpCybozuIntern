@@ -1,6 +1,4 @@
-const filemanage = {
-
-
+const fileManage = {
     f001: {
         folderName: 'Information System Department',
         viewAuth: 'Information System Department',
@@ -52,4 +50,4 @@ const filemanage = {
     },
 
 };
-console.log(filemanage);
+console.log(fileManage);
