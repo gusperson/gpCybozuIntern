@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+    section img{
+        max-width: 100%;
+    }
+    .center{
+        margin: 0 auto 0 auto;
+        width: 50%;
+    }
+    .bottom{
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+    text {
+        user-select: none;
+        display:inline;
+        font-size: 25px;
+    }
+    .arrow {
+        font-size: 50px;
+    }
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div class="center">
+        <div>
+            <img src="./images/img1.jpg" border=5 id="bigimg">
+        </div>    
+    </div>
+    <div class="bottom">
+        <text>
+                <span class="arrow" id="larrow">&#8249;</span>
+                <span id="current">1/5</span> 
+                <span class="arrow" id='rarrow'>&#8250;</span>
+        </text>
+    </div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+const current = document.getElementById('current');
+document.getElementById('larrow').onclick = function() {
+    if (!(parseInt(current.textContent, 10) === 1)) {
+        current.textContent = (parseInt(current.textContent, 10) - 1) + '/5';
+        document.getElementById('bigimg').src = './images/img' + parseInt(current.textContent, 10) + '.jpg';
+    }
+};
+document.getElementById('rarrow').onclick = function() {
+    if (!(parseInt(current.textContent, 10) === 5)) {
+        current.textContent = (parseInt(current.textContent, 10) + 1) + '/5';
+        document.getElementById('bigimg').src = './images/img' + parseInt(current.textContent, 10) + '.jpg';
+    }
+};
+</script>
+</body>
+</html>
