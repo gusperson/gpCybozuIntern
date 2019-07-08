@@ -1,7 +1,5 @@
 
 $(document).ready(function() {
-
-
 var dataURL = 'https://api.openweathermap.org/data/2.5/weather?id=5391997&APPID=62a02b17d00d0e2aa2d52219fc57ea05' 
 var weatherData;
 var getData = function (url) {
@@ -18,7 +16,5 @@ var getData = function (url) {
         $('#speed').text(speed + "m/s");
     });
 }
-
 getData(dataURL);
-
 });
