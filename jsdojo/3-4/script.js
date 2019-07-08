@@ -12,15 +12,12 @@ if (guess <= 5 && guess >= 0) {
     if (guess === random) {
         g.textContent = 'Correct!';
         console.log('Correct!');
-
     } else {
         g.textContent = 'Incorrect.';
         console.log('Incorrect');
     }
-
 } else {
     window.alert('Wrong Input.');
     g.textContent = 'Invalid Input.';
-
 }
 console.log(random);

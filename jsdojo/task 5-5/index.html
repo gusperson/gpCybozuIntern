@@ -46,7 +46,7 @@
         <text>
                 <span class="arrow" id="larrow">&#8249;</span>
                 <span id="current">1/5</span> 
-                <span class="arrow" id='rarrow'>&#8250;</span>
+                <span class="arrow" id="rarrow">&#8250;</span>
         </text>
     </div>
 </section>
@@ -54,17 +54,26 @@
 <footer>JavaScript Samples</footer>
 <script>
 const current = document.getElementById('current');
-document.getElementById('larrow').onclick = function() {
-    if (!(parseInt(current.textContent, 10) === 1)) {
-        current.textContent = (parseInt(current.textContent, 10) - 1) + '/5';
-        document.getElementById('bigimg').src = './images/img' + parseInt(current.textContent, 10) + '.jpg';
-    }
-};
-document.getElementById('rarrow').onclick = function() {
-    if (!(parseInt(current.textContent, 10) === 5)) {
+const next = function(num) {
+    if(num === 0) {
+        return;
+    } else if(num === 1){
+            if (!(parseInt(current.textContent, 10) === 1)) {
+            current.textContent = (parseInt(current.textContent, 10) - 1) + '/5';
+            document.getElementById('bigimg').src = './images/img' + parseInt(current.textContent, 10) + '.jpg';
+            }
+    } else {
+        if (!(parseInt(current.textContent, 10) === 5)) {
         current.textContent = (parseInt(current.textContent, 10) + 1) + '/5';
         document.getElementById('bigimg').src = './images/img' + parseInt(current.textContent, 10) + '.jpg';
+        }
     }
+}
+document.getElementById('larrow').onclick = function() {
+    next(1);
+};
+document.getElementById('rarrow').onclick = function() {
+    next(2);
 };
 </script>
 </body>

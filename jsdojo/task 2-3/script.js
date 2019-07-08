@@ -1,4 +1,5 @@
-let calculateTotal = function(num) {
+const calculate = document.getElementById('calc');
+calculate.addEventListener("click", function() {
     let usr = 0;
     let gb = 0;
     if (document.getElementById('check0').checked) {
@@ -9,4 +10,4 @@ let calculateTotal = function(num) {
     }
     const result = 120 + usr + gb;
     document.getElementById('price').value = result;
-};
+});
