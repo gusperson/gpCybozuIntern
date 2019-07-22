@@ -1,9 +1,10 @@
 {
-    "app": "35",
+    "app": "41",
     "scope": "ALL",
     "desktop": {
         "js": [
-            "javascriptAPI.js"
+            "javascriptAPI.js",
+            "kintoneREST.js"
         ],
         "css": []
     },
