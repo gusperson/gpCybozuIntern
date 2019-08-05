@@ -1,0 +1,46 @@
+<section class="settings">
+  <h2 class="settings-heading">Settings for JsTree</h2>
+  <form class="js-submit-settings">
+    <p class="kintoneplugin-row">
+      <label for="message">
+        Main folder name:
+        <input type="text" class="js-text-message kintoneplugin-input-text" required>
+      </label>
+      <div>
+          <button type="button" id="viewmaker" required>Click To Create Tree View!</button>
+      </div>
+      <div class="block">
+        
+        <label class="kintoneplugin-label">
+          <span id ="container_label">Name of the folders</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">Please select a DropDown field</div>
+        <div class="kintoneplugin-select-outer">
+          <div class="kintoneplugin-select">
+            <select id="select_dropdown" name="select_dropdown" required>
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <label class="kintoneplugin-label">
+          <span id ="container_label2">SubFolder Names</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">Select the field that will hold the subfolders.</div>
+        <div class="kintoneplugin-select-inner">
+          <div class="kintoneplugin-select">
+            <select id="select_text" name="select_text" required>
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>
+      </div>
+        <p class="kintoneplugin-row">
+        <button type="button" class="js-cancel-button kintoneplugin-button-dialog-cancel">Cancel</button>
+        <button class="kintoneplugin-button-dialog-ok">Save</button>
+    </p>
+  </form>
+</section>
