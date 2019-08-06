@@ -33,7 +33,7 @@
     ]
   },
   "name": {
-    "en": "JsTree"
+    "en": "Folder Configuration"
   },
   "description": {
     "en": "Organize text field into JsTree folders using a dropdown menu to choose the folder"
@@ -46,5 +46,9 @@
     "css": [
       "css/mobile.css"
     ]
+  },
+  "homepage_url": {
+    "en": "https://developer.kintone.io/hc/en-us/articles/360000364362"
   }
+  
 }

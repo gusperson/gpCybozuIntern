@@ -6,7 +6,6 @@ jQuery.noConflict();
       var config = kintone.plugin.app.getConfig(PLUGIN_ID);
       var root = config.root;
       var folder = config.dropdown;
-      console.log(folder);
       var textField = config.text;
       var body = {
         'app': kintone.app.getId()
