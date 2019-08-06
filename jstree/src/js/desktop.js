@@ -2,10 +2,11 @@ jQuery.noConflict();
 (function($, PLUGIN_ID) {
   'use strict';
   kintone.events.on('app.record.index.show', function(event) {
-    if (event.viewName === 'Folder View') {
+    if (!!(document.getElementById('tree'))) {
       var config = kintone.plugin.app.getConfig(PLUGIN_ID);
       var root = config.root;
       var folder = config.dropdown;
+      console.log(folder);
       var textField = config.text;
       var body = {
         'app': kintone.app.getId()
@@ -43,7 +44,7 @@ jQuery.noConflict();
         for (var i = 0; i < resp.records.length; i++) {
           var recNum = resp.records[i].Record_number.value;
           var name = resp.records[i].Text.value;
-          var department = resp.records[i].Drop_down.value;
+          var department = resp.records[i][folder].value;
           $('#tree').jstree(true).create_node('#' + department, {text: name, numb: recNum, icon: false});
         }
       }, function(error) {

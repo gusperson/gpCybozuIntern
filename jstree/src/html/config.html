@@ -1,21 +1,25 @@
 <section class="settings">
-  <h2 class="settings-heading">Settings for JsTree</h2>
+  <h2 class="settings-heading">JsTree Configuration</h2>
   <form class="js-submit-settings">
     <p class="kintoneplugin-row">
-      <label for="message">
-        Main folder name:
-        <input type="text" class="js-text-message kintoneplugin-input-text" required>
-      </label>
-      <div>
-          <button type="button" id="viewmaker" required>Click To Create Tree View!</button>
-      </div>
       <div class="block">
-        
         <label class="kintoneplugin-label">
-          <span id ="container_label">Name of the folders</span>
+            <span class="kintoneplugin-label">Root Folder Name:</span>
+        </label>
+        <span class="kintoneplugin-require">*</span>
+        <div class="kintoneplugin-row">
+            Enter the name of the Root Folder:
+        </div>
+        <div class="kintoneplugin-row">
+          <input type="text" class="js-text-message kintoneplugin-input-text" required>
+        </div>  
+      </div> 
+      <div class="block">        
+        <label class="kintoneplugin-label">
+          <span id ="container_label">Subfolders</span>
           <span class="kintoneplugin-require">*</span>
         </label>
-        <div class="kintoneplugin-row">Please select a DropDown field</div>
+        <div class="kintoneplugin-row">Select a DropDown field.</div>
         <div class="kintoneplugin-select-outer">
           <div class="kintoneplugin-select">
             <select id="select_dropdown" name="select_dropdown" required>
@@ -26,17 +30,33 @@
       </div>
       <div class="block">
         <label class="kintoneplugin-label">
-          <span id ="container_label2">SubFolder Names</span>
+          <span id ="container_label2">Record Names</span>
           <span class="kintoneplugin-require">*</span>
         </label>
-        <div class="kintoneplugin-row">Select the field that will hold the subfolders.</div>
-        <div class="kintoneplugin-select-inner">
-          <div class="kintoneplugin-select">
-            <select id="select_text" name="select_text" required>
-              <option value="">-----</option>
-            </select>
+        <div class="kintoneplugin-row">Select a text field.</div>
+        <div class ="kintoneplugin-row">
+          <div class="kintoneplugin-select-inner">
+            <div class="kintoneplugin-select">
+              <select id="select_text" name="select_text" required>
+                <option value="">-----</option>
+              </select>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="block">
+        <label class="kintoneplugin-label">
+          <span class="kintoneplugin-label">Folder View Name:</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">
+          Enter the name of the Folder View:
+        </div>
+        <div class="kintoneplugin-row">
+          <input type="text" class="js-view-name kintoneplugin-input-text" required>
+        </div>
+      <div class="kintoneplugin-row">
+          <button type="button" id="viewmaker" required>Click To Create a Tree View!</button>
       </div>
         <p class="kintoneplugin-row">
         <button type="button" class="js-cancel-button kintoneplugin-button-dialog-cancel">Cancel</button>
