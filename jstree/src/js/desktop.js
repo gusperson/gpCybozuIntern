@@ -28,7 +28,7 @@ jQuery.noConflict();
         }
       });
       kintone.api(kintone.api.url('/k/v1/app/form/fields', true), 'GET', body, function(resp) {
-        for (let prop in resp.properties) {
+        for (var prop in resp.properties) {
           if (folder === prop) {
             for (var option in resp.properties[prop].options) {
               $('#tree').jstree(true).create_node('#root', {id: option, text: option, numb: -1});

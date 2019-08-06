@@ -9,19 +9,27 @@ jQuery.noConflict();
   var $viewname = $('.js-view-name');
   var config = kintone.plugin.app.getConfig(PLUGIN_ID);
   var buttonbool = false;
+  console.log(config);
   document.getElementById('viewmaker').onclick = function() {
+    if($viewname === '') {
+      window.alert('Please enter a folder view name.')
+    } else {
     buttonbool = true;
     var app = {
       'app': kintone.app.getId(),
     };
     kintone.api(kintone.api.url('/k/v1/preview/app/views', true), 'GET', app, function(view) {
-      console.log($viewname.val());
       view.app = kintone.app.getId();
-      var maxindex = 0;
+      var maxindex = -1;
+      var firstview = true;
       for (var numb in view.views) {
         if (view.views[numb].index > maxindex) {
           maxindex = view.views[numb].index + 1;
+          firstview = false;
         }
+      }
+      if (firstview) {
+        maxindex = 0;
       }
       view.views[$viewname.val()] = {
         'id': 74726565,
@@ -43,12 +51,6 @@ jQuery.noConflict();
             }
           ]
         };
-        kintone.api(kintone.api.url('/k/v1/preview/app/deploy', true), 'POST', newSettings, function() {
-          // success
-        }, function(error) {
-          // error
-          console.log(error);
-        });
       }, function(error) {
         window.alert('Please enter a folder view name.')
         // error
@@ -59,6 +61,7 @@ jQuery.noConflict();
       // error
       console.log(error);
     });
+  }
   };
   KintoneConfigHelper.getFields().then(function(resp) {
     for (var i = 0; i < resp.length; i++) {
@@ -87,9 +90,6 @@ jQuery.noConflict();
     if (config.text) {
       $text.val(config.text);
     }
-    if (config.viewname) {
-      $viewname.val(config.view);
-    }
   }, function(error) {
     // error
     console.log(error);
@@ -97,15 +97,30 @@ jQuery.noConflict();
   if (config.root) {
     $root.val(config.root);
   }
+  console.log(config.viewname);
+  if (config.viewname) {
+    console.log('hello?')
+    $viewname.val(config.viewname);
+  }
   $form.on('submit', function(e) {
-    if (buttonbool) {
+    console.log(config.viewname)
+    if (buttonbool || config.viewname) {
       e.preventDefault();
-      config = {
-        'dropdown': $folder.val(),
-        'root': $root.val(),
-        'text': $text.val(),
-        'viewname': $viewname.val()
-      };
+      if (buttonbool) {
+        config = {
+          'dropdown': $folder.val(),
+          'root': $root.val(),
+          'text': $text.val(),
+          'viewname': $viewname.val(),
+        }
+      } else {
+        config = {
+          'dropdown': $folder.val(),
+          'root': $root.val(),
+          'text': $text.val(),
+          'viewname': config.viewname
+        }
+      }
       kintone.plugin.app.setConfig(config, function() {
         alert('The plug-in settings have been saved. Please update the app!');
         window.location.href = '/k/admin/app/flow?app=' + kintone.app.getId();
