@@ -9,7 +9,6 @@
                 span0 = '</span>',
                 txt0 = [text];    
             $(textField).html(slab0 + txt0.join(span0 + slab0) + span0).slabText();
-
         });
         kintone.events.on('app.record.index.show', function(event) {
             const header = kintone.app.getHeaderSpaceElement();
