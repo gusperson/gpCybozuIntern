@@ -28,9 +28,13 @@ jQuery.noConflict();
             });
             kintone.api(kintone.api.url('/k/v1/app/form/fields', true), 'GET', body, function(resp) {
                 for (const prop in resp.properties) {
-                    if (folder === prop) {
-                        for (const option in resp.properties[prop].options) {
-                            $('#tree').jstree(true).create_node('#root', {id: option, text: option, numb: -1});
+                    if (resp.properties.hasOwnProperty(prop)) {
+                        if (folder === prop) {
+                            for (const option in resp.properties[prop].options) {
+                                if (resp.properties[prop].hasOwnProperty(option)) {
+                                    $('#tree').jstree(true).create_node('#root', {id: option, text: option, numb: -1});
+                                }
+                            }
                         }
                     }
                 }
@@ -41,7 +45,7 @@ jQuery.noConflict();
             });
             kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body, function(resp) {
                 for (let i = 0; i < resp.records.length; i++) {
-                    const recNum = resp.records[i].$id.value; //const recNum = resp.records[i].Record_number.value;
+                    const recNum = resp.records[i].$id.value;
                     const name = resp.records[i][textField].value;
                     const department = resp.records[i][folder].value;
                     $('#tree').jstree(true).create_node('#' + department, {text: name, numb: recNum, icon: false});

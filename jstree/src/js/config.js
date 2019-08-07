@@ -58,16 +58,16 @@ jQuery.noConflict();
         for (let i = 0; i < resp.length; i++) {
             switch (resp[i].type) {
             case 'DROP_DOWN':
-                var opt = $('<option>'); document.createElement('option');
-                var text = document.createTextNode(resp[i].label);
-                opt.attr('value', resp[i].code);//opt.setAttribute('value', resp[i].code);
+                const opt = $('<option>'); 
+                const text = document.createTextNode(resp[i].label);
+                opt.attr('value', resp[i].code);
                 opt.append(text);
                 $folder.append(opt);
                 break;
             case 'SINGLE_LINE_TEXT':
-                var opt = $('<option>'); //document.createElement('option');
-                var text = document.createTextNode(resp[i].label);
-                opt.attr('value', resp[i].code); //opt.setAttribute('value', resp[i].code);
+                const opt = $('<option>'); 
+                const text = document.createTextNode(resp[i].label);
+                opt.attr('value', resp[i].code); 
                 opt.append(text);
                 $text.append(opt);
                 break;
