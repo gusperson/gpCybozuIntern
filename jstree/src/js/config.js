@@ -1,4 +1,3 @@
-/* eslint-disable prefer-arrow-callback */
 jQuery.noConflict();
 (function($, PLUGIN_ID) {
     'use strict';
