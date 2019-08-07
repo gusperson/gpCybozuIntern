@@ -42,7 +42,7 @@ jQuery.noConflict();
             kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body, function(resp) {
                 for (let i = 0; i < resp.records.length; i++) {
                     const recNum = resp.records[i].$id.value; //const recNum = resp.records[i].Record_number.value;
-                    const name = resp.records[i].Text.value;
+                    const name = resp.records[i][textField].value;
                     const department = resp.records[i][folder].value;
                     $('#tree').jstree(true).create_node('#' + department, {text: name, numb: recNum, icon: false});
                 }
