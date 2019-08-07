@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    $(document).ready(() => {
+    $(document).ready(function()  {
         kintone.events.on('app.record.detail.show', (event) => {
             const textField = kintone.app.record.getFieldElement('Text');
             console.log(textField);
