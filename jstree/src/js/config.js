@@ -57,6 +57,7 @@ jQuery.noConflict();
     KintoneConfigHelper.getFields().then(function(resp) {
         for (let i = 0; i < resp.length; i++) {
             let opt = $('<option>'); 
+            let text = document.createTextNode(resp[i].label)
             switch (resp[i].type) {
             case 'DROP_DOWN':
                 opt.attr('value', resp[i].code);
