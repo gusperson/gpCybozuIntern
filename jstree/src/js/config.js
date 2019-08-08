@@ -56,17 +56,14 @@ jQuery.noConflict();
     };
     KintoneConfigHelper.getFields().then(function(resp) {
         for (let i = 0; i < resp.length; i++) {
+            let opt = $('<option>'); 
             switch (resp[i].type) {
             case 'DROP_DOWN':
-                const opt = $('<option>'); 
-                const text = document.createTextNode(resp[i].label);
                 opt.attr('value', resp[i].code);
                 opt.append(text);
                 $folder.append(opt);
                 break;
             case 'SINGLE_LINE_TEXT':
-                const opt = $('<option>'); 
-                const text = document.createTextNode(resp[i].label);
                 opt.attr('value', resp[i].code); 
                 opt.append(text);
                 $text.append(opt);

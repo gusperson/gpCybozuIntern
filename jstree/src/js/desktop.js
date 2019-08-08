@@ -31,7 +31,7 @@ jQuery.noConflict();
                     if (resp.properties.hasOwnProperty(prop)) {
                         if (folder === prop) {
                             for (const option in resp.properties[prop].options) {
-                                if (resp.properties[prop].hasOwnProperty(option)) {
+                                if (resp.properties[prop].options.hasOwnProperty(option)) {
                                     $('#tree').jstree(true).create_node('#root', {id: option, text: option, numb: -1});
                                 }
                             }
@@ -46,7 +46,10 @@ jQuery.noConflict();
             kintone.api(kintone.api.url('/k/v1/records', true), 'GET', body, function(resp) {
                 for (let i = 0; i < resp.records.length; i++) {
                     const recNum = resp.records[i].$id.value;
-                    const name = resp.records[i][textField].value;
+                    let name = resp.records[i][textField].value;
+                    if (name === '') {
+                        name = 'Untitled';
+                    }
                     const department = resp.records[i][folder].value;
                     $('#tree').jstree(true).create_node('#' + department, {text: name, numb: recNum, icon: false});
                 }

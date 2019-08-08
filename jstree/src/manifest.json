@@ -40,11 +40,8 @@
   },
   "mobile": {
     "js": [
-      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
-      "js/mobile.js"
     ],
     "css": [
-      "css/mobile.css"
     ]
   },
   "homepage_url": {
