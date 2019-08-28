@@ -1,0 +1,67 @@
+<section class="settings">
+  <h2 class="settings-heading">Folder Configuration</h2>
+  <form class="js-submit-settings">
+    <p class="kintoneplugin-row">
+        <div class="block">
+            <label class="kintoneplugin-label">
+              <span class="kintoneplugin-label">Folder View Name</span>
+            </label>
+            <div class="kintoneplugin-row">
+                This plug-in displays tree structures within a Custom View containing the following HTML code: &lt;ul id="tree"&gt;&lt;/ul&gt;.<br>
+                If you do not have a Custom View ready, enter a name for a Custom View below, and click on the button to automatically create a new Custom View.
+            </div>
+            <div class="kintoneplugin-row">
+              <input type="text" class="js-view-name kintoneplugin-input-text">
+            </div>
+          <div class="kintoneplugin-row">
+              <button type="button" id="viewmaker">Click To Create a Custom View!</button>
+          </div>
+          </div>  
+      <div class="block">
+        <label class="kintoneplugin-label">
+            <span class="kintoneplugin-label">Root Folder Name</span>
+        </label>
+        <span class="kintoneplugin-require">*</span>
+        <div class="kintoneplugin-row">
+            Enter the name of the Root Folder:
+        </div>
+        <div class="kintoneplugin-row">
+          <input type="text" class="js-text-message kintoneplugin-input-text" required>
+        </div>  
+      </div>
+      <div class="block">        
+        <label class="kintoneplugin-label">
+          <span id ="container_label">Subfolders</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">Select a DropDown field which will label the subfolders of the root folder.</div>
+        <div class="kintoneplugin-select-outer">
+          <div class="kintoneplugin-select">
+            <select id="select_dropdown" name="select_dropdown" required>
+              <option value="">-----</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <label class="kintoneplugin-label">
+          <span id ="container_label2">Node Titles</span>
+          <span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">Select a Text field which will label the nodes within the subfolders.</div>
+        <div class ="kintoneplugin-row">
+          <div class="kintoneplugin-select-inner">
+            <div class="kintoneplugin-select">
+              <select id="select_text" name="select_text" required>
+                <option value="">-----</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="kintoneplugin-row">
+            <button type="button" class="js-cancel-button kintoneplugin-button-dialog-cancel">Cancel</button>
+            <button class="kintoneplugin-button-dialog-ok">Save</button>  
+      </div>
+    </p>
+  </form>
+</section>
